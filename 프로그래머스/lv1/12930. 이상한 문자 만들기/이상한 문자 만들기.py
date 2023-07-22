@@ -5,8 +5,8 @@ def solution(s):
     """
     split()과 split(' ')의 차이
     s = "  try hello world   "
-    s.split() → ['hello', 'fucking', 'world']
-    s.split(' ') → ['', '', 'hello', '', 'fucking', 'world', '', '', '']
+    s.split() → ['try', 'hello', 'world']
+    s.split(' ') → ['', '', 'try', 'hello', 'world', '', '', '']
     """
     for word in s:        
         tmp_word = ''
