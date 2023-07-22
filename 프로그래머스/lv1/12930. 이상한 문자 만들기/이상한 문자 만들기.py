@@ -2,6 +2,12 @@ def solution(s):
     answer = []
     
     s = s.split(' ')
+    """
+    split()과 split(' ')의 차이
+    s = "  try hello world   "
+    s.split() → ['hello', 'fucking', 'world']
+    s.split(' ') → ['', '', 'hello', '', 'fucking', 'world', '', '', '']
+    """
     for word in s:        
         tmp_word = ''
         for w in range(0,len(word)):
