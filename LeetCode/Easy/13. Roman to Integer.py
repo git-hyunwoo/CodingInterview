@@ -12,18 +12,15 @@ class Solution:
         sum = 0
         i = 0
         while i < len(s):
-            
-            if i < len(s) and numbers.get(s[i]) < numbers.get(s[i + 1]):
+            if i + 1 < len(s) and numbers.get(s[i]) < numbers.get(s[i + 1]):
+                # 1) i + 1 < len(s): Check if there is a next character to avoid index out-of-range errors
+                # 2) numbers[s[i]] < numbers[s[i + 1]]:
+                #    If the current value is smaller than the next value, apply the Roman numeral subtraction rule
+                #    Examples: IV=4, IX=9, XL=40, XC=90, CD=400, CM=900
                 sum += numbers.get(s[i + 1]) - numbers.get(s[i])
                 i += 2
             else:
                 sum += numbers.get(s[i]) 
                 i += 1
 
-"""
-단순히 더하면 될줄 알았는데 감산규칙? 이라는게 필요하네...
-III = 3이지만 IV는 4기때문... 하지만 그냥 더해버리면 IV는 6이 된다... 후...
-
-"""            
-a = Solution()
-print(a.romanToInt("III"))
+        return sum
